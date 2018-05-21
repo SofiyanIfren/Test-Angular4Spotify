@@ -22,12 +22,13 @@ export class AppServiceService {
         .map(res => res.json());
   }
 
-  /*
-  // TOUSE : Fonction à utiliser afin d'afficher les détails d'un artiste sélectionné
-  getArtist(id:string){
-      this.artistUrl = 'https://api.spotify.com/v1/artists/'+id;
-      return this.http.get(this.artistUrl)
-          .map(res => res.json());
+  // Fonction servant à afficher les albums d'un artiste sélectionné
+  getArtist(token: string, id:string){
+    let headers = new Headers({'Authorization': 'Bearer ' + token});
+    let options = new RequestOptions({ headers: headers });
+    this.artistUrl = 'https://api.spotify.com/v1/artists/' + id + '/albums';
+    return this.http.get(this.artistUrl, options)
+        .map(res => res.json());
   }
-  */
+
 }  

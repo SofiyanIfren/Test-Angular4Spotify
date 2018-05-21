@@ -12,9 +12,9 @@ export class ArtistsDetailsComponent implements OnInit {
 
   itemsNumber: JSON;
 
-  constructor(private appService: AppServiceService, searchComponent: SearchComponent) {
+  constructor(private appService: AppServiceService, private searchComponent: SearchComponent) {
     // TODO : récupérer les valeurs du formulaire afin de les stocker dans les variables adéquates et "reconstruire" la classe pour afficher le resultat de la requete
-    let token = 'BQBk3DuvsvnKw3nalH4cubXC3AFyE14pjO1qvk7Wr9hHXjdAlZkjlMYGBnh8pI4XOEgnDahvNBzqJmP3j4feUD0QHJLtlX8Ts4p3SoFGChfw5NqftR7ka55x6PvNkPKidmkNqzFED7adKE2u__JZaG0tAXA3uc4';
+    let token = 'BQCCwyAXbW0FL6JkKDA0eyefJcZnFoV3WQn-gCB8jtI3igqaLvFzCRzM9r5fKnthE2SdSNOGyg1knKyGiX9ogAYx2USYa6KjegIQV96t5bsgIKpZR2I3-AGO3OhiB3cWNo0S0TxaP9ZoEamvmLi5JZpkUa9lyBE';
     let artist = 'Michael'
     this.appService.searchArtist(token, artist, 'artist').subscribe(response => {
       // affichage du json dans la console pour travailler
@@ -24,12 +24,18 @@ export class ArtistsDetailsComponent implements OnInit {
     });
   } 
 
-  // TODO : Afficher les détails de l'artiste sélectionné dans un nouveau composant
+  // TODO : Afficher les albums de l'artiste sélectionné dans un nouveau composant
   goToDetails(id: string){
+    let token = 'BQCCwyAXbW0FL6JkKDA0eyefJcZnFoV3WQn-gCB8jtI3igqaLvFzCRzM9r5fKnthE2SdSNOGyg1knKyGiX9ogAYx2USYa6KjegIQV96t5bsgIKpZR2I3-AGO3OhiB3cWNo0S0TxaP9ZoEamvmLi5JZpkUa9lyBE';
+    this.appService.getArtist(token, id).subscribe(response => {
+      // Implémenter un Observable ici et un Observer sur le component d'affichage
+      console.log(response);
+    })
 
   }
 
   ngOnInit() {
+    
   }
 
 }

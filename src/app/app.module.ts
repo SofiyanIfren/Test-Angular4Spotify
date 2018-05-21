@@ -6,7 +6,8 @@ import { SearchComponent } from './search/search.component';
 import { ArtistsDetailsComponent } from './artists-details/artists-details.component';
 import { AppServiceService } from './services/app-service.service';
 import { HttpModule, ConnectionBackend } from '@angular/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormGroup } from '@angular/forms';
+import { ArtistInformationsComponent } from './artist-informations/artist-informations.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     NavBarComponent,
     SearchComponent,
-    ArtistsDetailsComponent
+    ArtistsDetailsComponent,
+    ArtistInformationsComponent
   ],
   imports: [
     BrowserModule,

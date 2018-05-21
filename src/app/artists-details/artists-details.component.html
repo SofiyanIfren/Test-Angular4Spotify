@@ -1,4 +1,4 @@
-<div class="col-sm-4 list-group" *ngFor="let item of itemsNumber" (click)="goToDetails(item.id)">
+<div id="list" class="list-group" *ngFor="let item of itemsNumber" (click)="goToDetails(item.id)">
   <div class="list-group-item active">
     <h4 class="list-group-item-heading">{{ item.name }}</h4>
     <p class="list-group-item-text">Déjà {{ item.followers.total }} followers !</p>
