@@ -1,5 +1,5 @@
+<!-- **************************   FORMULAIRE   ************************************ -->
 <form id="myForm" class="container" (ngSubmit)="onValidate(myForm)" #myForm="ngForm">
-
   <h4 class="col-sm-10">Renseignez votre Token*</h4>
   <input class="form-control" type="text" placeholder="Token" name="token" ngModel><br>
 
@@ -7,5 +7,25 @@
   <input class="form-control" type="text" placeholder="Artiste" name="artist" ngModel><br>
     
   <button class="btn btn-secondary btn-lg btn-block" type="submit">Trouve mon artiste !</button>
-
 </form>
+
+<div class="row">
+  <!-- **********************   LISTE DES ARTISTES   ******************************** -->
+  <div class="col-sm-4">
+    <div id="artistsList" class="list-group" *ngFor="let artist of artistsNumber" (click)="goToInformations(artist.id)">
+      <div class="list-group-item active">
+        <h4 class="list-group-item-heading">{{ artist.name }}</h4>
+        <p class="list-group-item-text">Déjà {{ artist.followers.total }} followers !</p>
+      </div>
+    </div>
+  </div>
+  <!-- **********************   LISTE DES ALBUMS   ********************************** -->
+  <div class="col-sm-8">
+    <div id="albumsList" class="list-group" *ngFor="let album of albumsNumber">
+      <div class="list-group-item active">
+        <h4 class="list-group-item-heading" >{{ album.name }}</h4>
+        <p class="list-group-item-text">Date de sortie : {{ album.release_date }}</p>
+      </div>
+    </div>
+  </div>
+</div>
