@@ -1,9 +1,12 @@
 #myForm {
-    margin: 25px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 25px;
+    margin-bottom: 50px;
 }
 
 #artistsList {
-    margin-left: 15px;
+    margin-left: 50px;
 }
 
 #albumsList {
