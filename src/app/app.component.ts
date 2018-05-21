@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import {SearchComponent} from './search/search.component';
-import {AppServiceService} from './app-service.service';
+import { SearchComponent } from './search/search.component';
+import { AppServiceService } from './services/app-service.service';
 
 @Component({
   selector: 'app-root',

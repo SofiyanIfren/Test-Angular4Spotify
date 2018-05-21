@@ -1,13 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SearchComponent } from './search/search.component';
 import { ArtistsDetailsComponent } from './artists-details/artists-details.component';
-import { AppServiceService } from './app-service.service';
+import { AppServiceService } from './services/app-service.service';
 import { HttpModule, ConnectionBackend } from '@angular/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,10 +18,14 @@ import { HttpModule, ConnectionBackend } from '@angular/http';
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
-    AppServiceService
+    AppServiceService,
+    ArtistsDetailsComponent,
+    SearchComponent
   ],
   bootstrap: [AppComponent]
 })
